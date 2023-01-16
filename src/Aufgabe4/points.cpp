@@ -177,69 +177,6 @@ bool Points::contains(QPointF p) {
     return output;
 }
 
-///* get quadrant from 12 o'clock*/
-//int get_quadrant (const QPointF& p)
-//{
-//    if (p.x() > 0 && p.y() > 0)
-//        return 1;
-//    else if(p.x() < 0 && p.y() > 0)
-//        return 2;
-//    else if(p.x() < 0 && p.y() < 0)
-//        return 3;
-//    else
-//        return 4;
-//}
-//
-//double get_clockwise_angle(const QPointF& p) {
-//    double angle = 0.0;
-//    int quadrant = get_quadrant(p);
-//
-//    /*making sure the quadrants are correct*/
-////    cout << "Point: " << p << " is on the " << quadrant << " quadrant" << endl;
-//
-//    /*calculate angle and return it*/
-//    angle = -atan2(p.x(),-p.y());
-//    return angle;
-//}
-//
-//
-//static bool compare_points(const QPointF& a, const QPointF& b)
-//{
-//    return (get_clockwise_angle(a) < get_clockwise_angle(b));
-//}
-//
-//QList<QPointF> Points::clockwise() {
-//
-//    QList<QPointF> output = getPoints();
-//    std::sort(output.begin(), output.end(), compare_points);
-//
-//    return output;
-//}
-
-
-//QList<QPointF> Points::clockwise(QPointF center) {
-//    QList<QPointF> output;
-//    for (int i = 0; i < getCount(); ++i) {
-//        for (int j = i+1; j < getCount(); ++j) {
-//            pointlist[i];
-//            pointlist[j];
-//            output.append()
-//        }
-//    }
-//
-//    return output;
-//}
-
-//double Points::getAngle(QPointF p0, QPointF p1, QPointF center) {
-//    double p0c = sqrt(pow(center.x()-p0.x(),2)+
-//                    pow(center.y()-p0.y(),2)); // p0->c (b)
-//    double p1c = sqrt(pow(center.x()-p1.x(),2)+
-//                    pow(center.y()-p1.y(),2)); // p1->c (a)
-//    double p0p1 = sqrt(pow(p1.x()-p0.x(),2)+
-//                     pow(p1.y()-p0.y(),2)); // p0->p1 (c)
-//    return acos((p1c*p1c+p0c*p0c-p0p1*p0p1)/(2*p1c*p0c));
-//}
-
 double Points::getAngle(QPointF p0, QPointF p1, QPointF center) {
     QPointF p0c = QPointF(p0.x()-center.x(), p0.y()-center.y());
     QPointF p1c = QPointF(p1.x()-center.x(), p1.y()-center.y());
