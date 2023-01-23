@@ -262,10 +262,6 @@ Triangles GLWidget::delaunay(Points p) {
             newTriangles.addTriangle(randomPermutation[i], delta[0], delta[delta.size() - 1]);
         }
 
-
-
-
-        newTriangles.restoreDelauneyByFLipping();
         tr.mergeTriangles(newTriangles);
     }
     return tr;
